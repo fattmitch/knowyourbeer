@@ -104,12 +104,11 @@ footer p {
     width: 33%;
     
 }
+
 .footer-links {
     display: inline-block;
     width: 33%;
     text-align: center
-    
-    
 }
 
 .footer-links a {
@@ -124,6 +123,54 @@ footer p {
     text-align: right;
 }
 
-.footer-logo img {
-
+@media (max-width: 768px) {
+    
+    .search-box {
+        margin: 130px auto;
+        width: 90%;
+    }
+        
+    .tagline {
+        margin-top: 40px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px
+    }
+    
+    
+    .footer-logo {
+        display: none;
+    }
+    
+    footer p {
+        width: 49%;
+    }
+    
+    .footer-links {
+        width: 50%;
+        text-align: right;
+    }
 }
+
+@media (max-width: 414px) {
+    .search-box {
+        margin: 100px auto;
+        width: 95%;
+    }
+    .container-1 input#search {
+        height: 30px;
+        font-size: 16px;
+        text-transform: uppercase;
+        float: left;
+        padding-left: 30px;
+    }
+
+    .container-1 .icon{
+        position: absolute;
+        margin-left: 10px;
+        margin-top: 4px;
+        font-size: 16px;
+    }
+}
+
+
