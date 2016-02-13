@@ -1,0 +1,56 @@
+*, *::before, *::after {
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Open Sans';
+    color: white;
+    min-height: 100%;
+    background-image: url(../assets/images/knowyourbeer-background.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+}
+
+footer{
+    height: auto;
+	position: absolute;
+	bottom: 0;
+	left:0;
+    font-size: 12px;
+    width: 100%;
+    padding: 0 20px 5px 20px;
+    
+}
+
+footer p {
+    display: inline-block;
+    width: 33%;
+    
+}
+
+.footer-links {
+    display: inline-block;
+    width: 33%;
+    text-align: center
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-logo {
+    display: inline-block;
+    width: 33%;
+    text-align: right;
+}
