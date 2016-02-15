@@ -70,6 +70,7 @@
     width: 65%;
     padding-top: 40px;
     margin: auto;
+    max-width: 1000px;
 }
 
 .beer-logo {
@@ -100,6 +101,7 @@
     display: inline;
     font-size: 14px;
     font-weight: 700;
+    margin-right: 10px;
 }
 
 .attribute {
@@ -113,7 +115,7 @@
 
 .main-column p {
     font-size: 17px;
-    line-height: 28px;
+    line-height: 30px;
     text-indent: 25px
 }
 
@@ -136,6 +138,7 @@ footer{
     background-image: url(../assets/images/knowyourbeer-background.png);
     background-position: bottom center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @media (max-width: 768px) {
@@ -171,15 +174,21 @@ footer{
         width: 50%;
         text-align: right;
     }
+
+    .main-column p {
+    font-size: 15px;
+    line-height: 27px;
+    }
+    
+    footer {
+        background-size: auto;
+    }
 }
 
 @media (max-width: 414px) {
-    .main-container {
-        width: 95%;
-    }
 
     .beer-info {
-        width: 72%
+        width: 60%
     }
     
     .beer-logo {
@@ -195,6 +204,13 @@ footer{
         margin-bottom: 0px
     }
     .attribute-value {
-        font-size: 12px;
+        font-size: 10px;
+        margin-right: 0px;
     }
-        
+    
+   .main-column p {
+    font-size: 12px;
+    line-height: 20px
+    }
+
+}
