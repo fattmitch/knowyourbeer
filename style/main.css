@@ -15,9 +15,9 @@ body {
     min-height: 100%;
     background-image: url(../assets/images/knowyourbeer-background.png);
     background-repeat: no-repeat;
-    overflow: hidden;
     background-position: center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 footer{
