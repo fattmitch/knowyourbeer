@@ -1,0 +1,512 @@
+/* Global */
+
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+.header {
+    height: 110px;
+    background-image: url(../assets/images/knowyourbeer-background.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+body{
+    font-family: 'Open Sans';
+    color: white;
+    background-image: url(../assets/images/knowyourbeer-background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.body-secondary {
+    font-family: 'Open Sans';
+    color: white;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  box-sizing: border-box; /* 2 */
+}
+
+.main {
+    background-color: #fff;
+    color: #333;
+}
+
+.main-container {
+    width: 95%;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    margin: auto;
+}
+
+.main-column {
+    width: 95%;
+    padding-top: 30px;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        width: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+    
+    .main-container {
+        width: 40%;
+    }
+
+    .main-column {
+        width: 80%;
+        max-width: 770px;
+    }    
+}
+
+
+/* NAVIGATION MAIN */
+
+.logo-tagline {
+    margin-top: 40px
+}
+
+.tagline {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.logo {
+    position: relative;
+    margin: auto;
+    display: block;
+    width: 354px   
+}
+
+@media (min-width: 768px) {
+    .tagline {
+       font-size: 23px;
+    }
+}
+
+/* NAVIGATION - SEARCH RESULT / BEER DETAILS */
+
+.logo-secondary {
+    display: block;
+    position: relative;
+    top: 10px;
+    text-align: center;
+    
+}
+
+/* SEARCH MAIN */
+
+.search-box {
+    margin: 100px auto;
+    width: 95%;
+}
+
+.search-container {
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+.search-container input#search {
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.47);
+    border: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    color: rgba(51, 51, 51, 0.57);
+    text-transform: uppercase;
+    float: left;
+    padding-left: 15px;
+}
+
+.search-container button.icon{
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    
+    border: none;
+    background: rgba(140, 88, 0, 0.44);
+    height: 60px;
+    width: 70px;
+    color: #fff;
+    opacity: 0;
+    font-size: 16px;
+    
+    -webkit-transition: all .55s ease;
+    -moz-transition: all .55s ease;
+    -ms-transition: all .55s ease;
+    -o-transition: all .55s ease;
+    transition: all .55s ease;
+}
+
+.search-container input#search:focus, 
+.search-container input#search:hover {
+    outline: none;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.47);
+    box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.47);
+    background: #fff;
+    color: #333;
+}
+
+.search-container:hover button.icon,
+.search-container:active button.icon,
+.search-container:focus button.icon {
+    outline: none;
+    opacity: 1;
+    margin-left: -70px;
+}
+ 
+.search-container:hover button.icon:hover{
+    background: #8C5800;
+}
+
+@media (min-width: 768px) {
+    
+    .search-box {
+        margin: 130px auto;
+        width: 90%;
+    }
+    
+    .search-container input#search {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+    
+    .search-container .icon {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    
+    .search-box {
+        margin: 150px auto;
+        width: 90%;
+        max-width: 800px;
+    }
+    
+    .search-container input#search {
+        font-size: 28px;
+    }
+    
+    .search-container .icon {
+        font-size: 28px;
+    }    
+}
+
+@media (min-width: 1200px) {
+    .search-box {
+        margin: 150px auto;
+        width: 90%;
+        max-width: 1000px;
+    }
+}
+
+/* SEARCH SECONDARY - search bar in nav */
+
+.search-box-secondary {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 700px;
+    overflow: hidden;
+}
+
+.search-container-secondary {
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+.search-container-secondary input#search {
+    width: 100%;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.47);
+    border: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    color: rgba(51, 51, 51, 0.57);
+    text-transform: uppercase;
+    float: left;
+    padding-left: 15px;
+}
+
+.search-container-secondary button.icon{
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    
+    border: none;
+    background: rgba(140, 88, 0, 0.44);
+    height: 36px;
+    width: 50px;
+    color: #fff;
+    opacity: 0;
+    font-size: 16px;
+    
+    -webkit-transition: all .55s ease;
+    -moz-transition: all .55s ease;
+    -ms-transition: all .55s ease;
+    -o-transition: all .55s ease;
+    transition: all .55s ease;
+}
+
+.search-container-secondary input#search:focus, 
+.search-container-secondary input#search:hover {
+    outline: none;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.47);
+    box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.47);
+    background: #fff;
+    color: #333;
+}
+
+.search-container-secondary:hover button.icon,
+.search-container-secondary:active button.icon,
+.search-container-secondary:focus button.icon {
+    outline: none;
+    opacity: 1;
+    margin-left: -50px;
+}
+
+.search-container-secondary:hover button.icon:hover{
+    background: #8C5800;
+}
+
+
+
+/* INFO CARD */
+
+.search-result {
+    padding-bottom: 30px;
+}
+
+.beer-logo {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;   
+}
+
+.beer-info {
+    display: inline-block;
+    width: 72%;
+    margin-top: -14px
+}
+
+.beer-title {
+    font-family: Montserrat;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.brewery {
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 0px;
+}
+
+.attribute-value {
+    display: inline;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.attribute {
+    margin-right: 5px; 
+}
+
+.value {
+    color: #8C5800;
+}
+
+@media (min-width: 992px) {
+    
+    .search-result {
+        margin-top: 30px;
+    }
+    
+    .beer-title {
+        font-size: 18px;
+        margin-top: 14px
+    }
+    
+    .brewery {
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+    
+    .attribute-value {
+        margin-right: 10px;
+    }
+}
+
+
+/* PAGE TEXT */
+
+.main-column p {
+    font-size: 12px;
+    line-height: 22px;
+    text-indent: 25px
+}
+
+.brewery-description h3 {
+    font-family: Montserrat;
+    color: #8C5800;
+    font-size: 15px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    
+    .main-column p {
+        font-size: 15px;
+        line-height: 27px;
+    }
+}
+
+/* FOOTER MAIN */
+
+footer{
+    height: auto;
+	position: absolute;
+	bottom: 0;
+	left:0;
+    font-size: 12px;
+    width: 100%;
+    padding: 0 20px 5px 20px;   
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-logo {
+    display: none;
+    width: 33%;
+    text-align: right;
+}
+
+footer p {
+    display: inline-block;
+    width: 49%;
+}
+
+.footer-links {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+    
+    footer p {
+        width: 33%;
+    }
+    
+    .footer-links {
+        width: 33%;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        display: inline-block;
+        position: relative;
+        top: 5px
+    }
+}
+
+/* FOOTER SECONDARY */
+
+.footer-secondary{
+    height: auto;
+	position: fixed;
+	bottom: 0;
+	left:0;
+    font-size: 12px;
+    width: 100%;
+    padding: 10px 20px 5px 20px;
+    background-image: url(../assets/images/knowyourbeer-background.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.footer-secondary-links a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-secondary-logo {
+    position: relative;
+    top: 5px;
+    display: none;
+    text-align: right;
+}
+    
+.footer-secondary p {
+    display: inline-block;
+    width: 49%;
+}
+    
+.footer-secondary-links {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+        
+    .footer-secondary {
+        background-size: cover;
+    }
+    .footer-secondary-logo {
+        display: inline-block;
+        width: 33%
+    }
+    
+    .footer-secondary p {
+        width: 33%;
+    }
+    
+    .footer-secondary-links {
+        width: 33%;
+        text-align: center;
+    }
+}
