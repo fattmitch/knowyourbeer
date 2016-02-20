@@ -32,6 +32,7 @@ body{
 .body-secondary {
     font-family: 'Open Sans';
     color: white;
+    background-color: white;
 }
 
 input[type="search"] {
