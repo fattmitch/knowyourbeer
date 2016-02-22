@@ -15,7 +15,7 @@
         $stateProvider
             .state('search-results', {
                 url: '/search-results',
-                templateUrl: '/templates/search-results.html'    
+                templateUrl: '/templates/search-results.html'
         })
         
         $stateProvider

@@ -22,17 +22,13 @@ html {
 body{
     font-family: 'Open Sans';
     color: white;
-    background-image: url(../assets/images/knowyourbeer-background.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 .body-secondary {
     font-family: 'Open Sans';
     color: white;
     background-color: white;
+    background-image: none;
 }
 
 input[type="search"] {
@@ -43,6 +39,15 @@ input[type="search"] {
 .main {
     background-color: #fff;
     color: #333;
+}
+
+.main-body {
+    height: 100vh;
+    background-image: url(../assets/images/knowyourbeer-background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .main-container {
@@ -80,7 +85,7 @@ input[type="search"] {
 /* NAVIGATION MAIN */
 
 .logo-tagline {
-    margin-top: 40px
+    padding-top: 40px
 }
 
 .tagline {
