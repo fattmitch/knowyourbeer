@@ -36,6 +36,10 @@ input[type="search"] {
   box-sizing: border-box; /* 2 */
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .main {
     background-color: #fff;
     color: #333;
@@ -294,7 +298,7 @@ input[type="search"] {
 .search-container-secondary input#search:hover {
     outline: none;
     box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.47);
-    box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.47);
+    box-shadow: inset 0px 1px know2px 0px rgba(0,0,0,0.47);
     background: #fff;
     color: #333;
 }
@@ -380,7 +384,7 @@ input[type="search"] {
 }
 
 
-/* PAGE TEXT */
+/* PAGE TEXT - BEER & BREWERY */
 
 .main-column p {
     font-size: 12px;
@@ -388,6 +392,7 @@ input[type="search"] {
     text-indent: 25px
 }
 
+.beers-by-brewery,
 .brewery-description h3 {
     font-family: Montserrat;
     color: #8C5800;
@@ -403,6 +408,84 @@ input[type="search"] {
         line-height: 27px;
     }
 }
+
+/*BREWERY INFO CARD */
+
+.brewery-logo {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;   
+}
+
+.brewery-info {
+    display: inline-block;
+    width: 68%;
+    margin-top: 0px
+}
+
+.brewery-title {
+    font-family: Montserrat;
+    /* text-transform: uppercase; */
+    font-size: 14px;
+}
+
+.location {
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 0px;
+}
+
+@media (min-width: 992px) {
+    .brewery-title {
+        font-size: 20px;
+    }
+    
+    .location {
+    font-size: 15px;
+    }
+}
+
+/* BREWERY - BEER LISTNG */
+
+.beer-listing {
+    width: 95%;
+    margin: 10px auto;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.brewery-beers {
+    padding-bottom: 30px;
+}
+
+@media (min-width: 992px) {
+    .beers-by-brewery {
+        margin-bottom: 30px;
+    }
+    .beer-listing {
+        width: 80%;
+        max-width: 770px;
+    }
+    
+    .brewery-beers {
+        width: 45%;
+        display: inline-block;
+    }
+    
+    .brewery-beers .beer-info {
+        width: 71%
+    }
+    
+    .brewery-beers .beer-title {
+        margin-bottom: 0px;
+    }
+    
+    .brewery-beers .attribute-value {
+         margin-right: 5px;
+    }
+}
+
 
 /* FOOTER MAIN */
 

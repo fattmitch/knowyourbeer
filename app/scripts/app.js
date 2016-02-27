@@ -12,16 +12,21 @@
                 templateUrl: '/templates/landing.html'
         })
         
-        $stateProvider
             .state('search-results', {
                 url: '/search-results',
                 templateUrl: '/templates/search-results.html'
         })
         
-        $stateProvider
             .state('beer-detail', {
-                url: '/beer-details',
+                url: '/beer-detail',
+                controller: 'BeerDetailCtrl as beerDetail',
                 templateUrl: '/templates/beer-detail.html'
+        })
+        
+        .state('brewery-detail', {
+                url: '/brewery-detail',
+                controller: 'BreweryDetailCtrl as breweryDetail',
+                templateUrl: '/templates/brewery-detail.html'
         });
     }
     

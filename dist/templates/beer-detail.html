@@ -15,8 +15,8 @@
                 <img src="assets/images/pliny.png" alt="<beer> logo">
             </div>
             <div class="beer-info">
-                <h3 class="beer-title">Pliny the Elder</h3>
-                <h4 class="brewery">Russian River Brewery | Santa Rosa, California</h4>
+                <h3 class="beer-title">{{ beerDetail.beerTitle }}</h3>
+                <h4 class="brewery"> {{beerDetail.brewery }} | Santa Rosa, California</h4>
                 <div class="attribute-value"><span class="attribute">Style:</span><span class="value">IPA</span></div>
                 <div class="attribute-value"><span class="attribute">BA Score:</span><span class="value">4.3 / 5</span></div>
                 <div class="attribute-value"><span class="attribute">ABV</span><span class="value">8%</span></div>
@@ -28,7 +28,9 @@
                     Pliny the Elder was immortalized by his nephew, Pliny the Younger, who wrote about his uncle succumbing to ash and smoke during the eruption of Mt. Vesuvius in 79 A.D. while rescuing people. Cheers to the scholar, historian, officer, writer, and Roman Naturalist- Pliny the Elder!</p>
             </div>
             <div class="brewery-description">
-                <h3>Russian River Brewery</h3>
+                <h3>
+                    <a ui-sref="brewery-detail">Russian River Brewery</a>
+                </h3>
                 <p>Russian River Brewing Company (RRBC) was originally owned by Korbel Champagne Cellars in Guerneville, California and was founded on their historic and beautiful property amidst vineyards and redwoods near the Russian River. When Korbel decided to get out of the beer business in 2003, they generously offered the brewmaster, Vinnie Cilurzo and his wife Natalie the rights to the brand. Russian River Brewing might be something completely different now if it weren't for this incredible opportunity.</p>
                 <p>In the early days on the Korbel property, Vinnie not only brewed the beer, but made the sales calls and deliveries as well. Eventually they hired a sales/delivery guy to help with all of that so he could focus on brewing! Korbel planted a small hop field where Vinnie received a "field" education on growing and brewing with "wet" hops. It was from those amazingly fresh hops, grown just a few yards away, that he made his first wet hops brew, "Hop-Time Harvest Ale".</p>
                 <p>While the brewery was still operating at Korbel, the owner of the winery bought Lake Sonoma Winery at the top of Dry Creek in Healdsburg, California. There, they let Vinnie build a second brewery (adjacent to the winery) with its own tasting room and a million dollar view. The brewery at Lake Sonoma was only open for about a year, but Vinnie gained invaluable experience building a brewery from the ground up, and it was there that he started experimenting with beer in wine barrels.</p>
