@@ -10,65 +10,25 @@
         </div>
     </nav>
     <section class="main">
-        <div class="main-column">
+        <div class="main-column brewery">
             <div class="brewery-logo">
-                <img src="assets/images/russian-river-brewing-logo.jpeg" alt="<beer> logo">
+                <img src={{breweryLogo}} alt="<beer> logo">
             </div>
             <div class="brewery-info">
-                <h3 class="brewery-title"> Russian River Brewing Co.</h3>
-                <h4 class="location">Santa Rosa, California</h4>
+                <h3 class="brewery-title">{{ breweryTitle }}</h3>
+                <h4 class="location">{{ breweryCity }}, {{ breweryState}} | {{ breweryCountry }}</h4>
                 </div>
-            <div class="brewery-description">
-                <p>Russian River Brewing Company (RRBC) was originally owned by Korbel Champagne Cellars in Guerneville, California and was founded on their historic and beautiful property amidst vineyards and redwoods near the Russian River. When Korbel decided to get out of the beer business in 2003, they generously offered the brewmaster, Vinnie Cilurzo and his wife Natalie the rights to the brand. Russian River Brewing might be something completely different now if it weren't for this incredible opportunity.</p>
-                <p>In the early days on the Korbel property, Vinnie not only brewed the beer, but made the sales calls and deliveries as well. Eventually they hired a sales/delivery guy to help with all of that so he could focus on brewing! Korbel planted a small hop field where Vinnie received a "field" education on growing and brewing with "wet" hops. It was from those amazingly fresh hops, grown just a few yards away, that he made his first wet hops brew, "Hop-Time Harvest Ale".</p>
-                <p>While the brewery was still operating at Korbel, the owner of the winery bought Lake Sonoma Winery at the top of Dry Creek in Healdsburg, California. There, they let Vinnie build a second brewery (adjacent to the winery) with its own tasting room and a million dollar view. The brewery at Lake Sonoma was only open for about a year, but Vinnie gained invaluable experience building a brewery from the ground up, and it was there that he started experimenting with beer in wine barrels.</p>
-                <p>On April 3, 2004, Vinnie and Natalie reopened RRBC as a brewpub in downtown Santa Rosa to great success and began self-distributing to nearby clients. In 2008, they opened a production brewery about 1 mile from their brewpub allowing them to triple production, take on more accounts locally, and distribute some beer in 4 more states.</p>
-                <p>As of 2012, RRBC employs over 60 part-time and full-time employees, and gives back to their community via charitable events such as their month-long Breast Cancer Fundraiser in October. The pub has become a community gathering place as well as a beer tourism destination. They also support local bands by hosting free live shows at the pub every weekend.</p>
-                <p>As it turns out, demand is still greater than the supply, but they prefer to grow their business organically while focusing on efficiencies and quality. For now, it is easier to make better beer than it is to make more beer!</p>
-                <p>The history of Russian River Brewing Company would be incomplete without a little background on the people who own it, operate it, and are passionate about their brewery and craft beer in general!</p>
+            <div>
+                <p>{{ breweryDescription }}</p>
             </div>
         </div>
     </section>
     <section class="beer-listing">
-        <h3 class="beers-by-brewery">Beers by Russian River Brewing Co.</h3>
-       <div class="brewery-beers">
-            <div class="beer-card">
-                <div class="beer-logo">
-                    <img src="assets/images/pliny.png" alt="<beer> logo">
-                </div>
-                <div class="beer-info">
-                    <h3 class="beer-title">Pliny the Elder</h3>
-                    <div class="attribute-value"><span class="attribute">Style:</span><span class="value">IPA</span></div>
-                    <div class="attribute-value"><span class="attribute">BA Score:</span><span class="value">4.3 / 5</span></div>
-                    <div class="attribute-value"><span class="attribute">ABV</span><span class="value">8%</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="brewery-beers">
-            <div class="beer-card">
-                <div class="beer-logo">
-                    <img src="assets/images/pliny.png" alt="<beer> logo">
-                </div>
-                <div class="beer-info">
-                    <h3 class="beer-title">Pliny the Elder</h3>
-                    <div class="attribute-value"><span class="attribute">Style:</span><span class="value">IPA</span></div>
-                    <div class="attribute-value"><span class="attribute">BA Score:</span><span class="value">4.3 / 5</span></div>
-                    <div class="attribute-value"><span class="attribute">ABV</span><span class="value">8%</span></div>
-                </div>
-            </div>
-        </div><div class="brewery-beers">
-            <div class="beer-card">
-                <div class="beer-logo">
-                    <img src="assets/images/pliny.png" alt="<beer> logo">
-                </div>
-                <div class="beer-info">
-                    <h3 class="beer-title">Pliny the Elder</h3>
-                    <div class="attribute-value"><span class="attribute">Style:</span><span class="value">IPA</span></div>
-                    <div class="attribute-value"><span class="attribute">BA Score:</span><span class="value">4.3 / 5</span></div>
-                    <div class="attribute-value"><span class="attribute">ABV</span><span class="value">8%</span></div>
-                </div>
-            </div>
-        </div>
+        
+        <h3 class="beers-by-brewery">Beers by {{ breweryTitle }}</h3>
+        
+        <ng-include src="'/templates/brewery-beers.html'"></ng-include>
+        
     </section>
     <footer class="footer-secondary">
         <p>Copyright Matt Fitch 2016</p> 

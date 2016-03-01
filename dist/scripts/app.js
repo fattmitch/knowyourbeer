@@ -27,6 +27,11 @@
                 url: '/brewery-detail',
                 controller: 'BreweryDetailCtrl as breweryDetail',
                 templateUrl: '/templates/brewery-detail.html'
+        })
+        
+        .state('about-us', {
+            url: '/about',
+            templateUrl: '/templates/about-us.html'
         });
     }
     

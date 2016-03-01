@@ -1,5 +1,7 @@
 var Hapi = require('hapi'),
     path = require('path'),
+    BreweryDb = require('brewerydb-node'),
+    brewdb = new BreweryDb('6de3e767a19d0512bacc940476987bd9'),
     port = process.env.PORT || 3000,
     server = new Hapi.Server(port),
     routes = {
@@ -23,6 +25,24 @@ var Hapi = require('hapi'),
             path: '/templates/{path*}',
             handler: createDirectoryRoute('templates')
         },
+        beer: {
+            method: 'GET',
+            path: '/beer',
+            handler: function(req, reply) {
+                brewdb.beer.getById("XAXGgF", {withBreweries: "Y"}, function(err, data) {
+                    reply(data);
+                });
+            }
+        },
+        brewery: {
+            method: 'GET',
+            path: '/brewery',
+            handler: function(req, reply) {
+                brewdb.breweries.getById("BSsTGw", {}, function(err, data) {
+                    reply(data);
+                });
+            }
+        },
         spa: {
             method: 'GET',
             path: '/{path*}',
@@ -32,7 +52,7 @@ var Hapi = require('hapi'),
         }
     };
 
-server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.spa ]);
+server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.spa, routes.beer, routes.brewery ]);
 server.start( onServerStarted );
 
 function onServerStarted() {

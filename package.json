@@ -3,20 +3,19 @@
   "version": "1.0.0",
   "description": "Know Your Beer Project",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/fattmitch/knowyourbeer.git"
+    "type": "git",
+    "url": "https://github.com/fattmitch/knowyourbeer.git"
   },
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-    
   "author": "Matt Fitch",
   "license": "ISC",
-  
   "dependencies": {
-  "hapi": "^7.5.0",
-  "path": "^0.4.9"
+    "brewerydb-node": "0.0.1",
+    "hapi": "^7.5.0",
+    "path": "^0.4.9"
   },
   "devDependencies": {
     "connect-modrewrite": "^0.7.9",
