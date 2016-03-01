@@ -43,6 +43,16 @@ var Hapi = require('hapi'),
                 });
             }
         },
+        /*breweryBeers: {
+            method: 'GET',
+            path: '/brewery-beers',
+            handler: function(req, reply) {
+                brewdb.brewery.getById("BSsTGw", {}, function(err, data){
+                   reply(data); 
+                });
+            }
+            
+        },*/
         spa: {
             method: 'GET',
             path: '/{path*}',

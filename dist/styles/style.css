@@ -31,15 +31,9 @@ a {
 }
 
 body{
+    background-color: #f0eee9;
     font-family: 'Open Sans';
     color: white;
-}
-
-.body-secondary {
-    font-family: 'Open Sans';
-    color: white;
-    background-color: white;
-    background-image: none;
 }
 
 input[type="search"] {
@@ -48,7 +42,6 @@ input[type="search"] {
 }
 
 .main {
-    background-color: #fff;
     color: #333;
     }
 
