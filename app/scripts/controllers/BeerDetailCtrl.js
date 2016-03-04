@@ -1,13 +1,15 @@
 (function() {
-    function BeerDetailCtrl($http, $scope) {
+    function BeerDetailCtrl($http, $scope, $stateParams) {
+        var beerId = $stateParams.id;
         $http({
             method: 'GET',
-            url: '/beer'
+            url: '/beer/' + beerId
         }).then(function success(response) {
             $scope.beerTitle = response.data.name;
             $scope.beerDescription = response.data.description;
             $scope.abv = response.data.abv;
             $scope.ibu = response.data.ibu;
+            $scope.breweryId = response.data.breweries[0].id;
             $scope.beerStyle = response.data.style.name;
             $scope.beerLogoIcon = response.data.labels.medium;
             $scope.breweryTitle = response.data.breweries[0].name;
@@ -22,5 +24,5 @@
     
     angular
         .module('knowYourBeer')
-        .controller('BeerDetailCtrl', ['$http', '$scope', BeerDetailCtrl]);
+        .controller('BeerDetailCtrl', ['$http', '$scope', '$stateParams', BeerDetailCtrl]);
 })();

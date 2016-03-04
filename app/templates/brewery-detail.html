@@ -1,6 +1,6 @@
     <nav class="header"> <!--Logo and Tagline -->
         <a href="/" class="logo-secondary">
-            <img src="assets/images/footer-logo.png" alt="Know Your Beer Logo">
+            <img src="/assets/images/footer-logo.png" alt="Know Your Beer Logo">
         </a>
         <div class="search-box-secondary"> <!--Search Bar -->
             <div class="search-container-secondary">
@@ -12,20 +12,23 @@
     <section class="main">
         <div class="main-column brewery">
             <div class="brewery-logo">
-                <img src={{breweryLogo}} alt="{{breweryTitle}} logo">
+                <img src={{brewery.images.squareMedium}} alt="{{brewery.name}} logo">
             </div>
             <div class="brewery-info">
-                <h3 class="brewery-title">{{ breweryTitle }}</h3>
+                
+                <h3 class="brewery-title">{{ brewery.name }}</h3>
                 <h4 class="location">{{ breweryCity }}, {{ breweryState}} | {{ breweryCountry }}</h4>
+                <h4 class="website"><a href="{{brewery.website}}">{{ brewery.website }}</a></h4>
+                
                 </div>
             <div>
-                <p>{{ breweryDescription }}</p>
+                <p>{{ brewery.description }}</p>
             </div>
         </div>
     </section>
     <section class="beer-listing">
         
-        <h3 class="beers-by-brewery">Beers by {{ breweryTitle }}</h3>
+        <h3 class="beers-by-brewery">Beers by {{ brewery.name }}</h3>
         
         <ng-include src="'/templates/brewery-beers.html'"></ng-include>
         
@@ -38,6 +41,6 @@
             <a href="/contact">Contact Us</a>
         </div>
         <a href="index.html" class="footer-secondary-logo">
-            <img src="assets/images/footer-logo.png" alt="Know Your Beer FooterImage">
+            <img src="/assets/images/footer-logo.png" alt="Know Your Beer FooterImage">
         </a>
     </footer>

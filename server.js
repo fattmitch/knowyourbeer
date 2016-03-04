@@ -1,5 +1,6 @@
 var Hapi = require('hapi'),
     path = require('path'),
+    request = require('request'),
     BreweryDb = require('brewerydb-node'),
     brewdb = new BreweryDb('6de3e767a19d0512bacc940476987bd9'),
     port = process.env.PORT || 3000,
@@ -27,32 +28,41 @@ var Hapi = require('hapi'),
         },
         beer: {
             method: 'GET',
-            path: '/beer',
+            path: '/beer/{id}',
             handler: function(req, reply) {
-                brewdb.beer.getById("XAXGgF", {withBreweries: "Y"}, function(err, data) {
+                brewdb.beer.getById(req.params.id, {withBreweries: "Y"}, function(err, data) {
                     reply(data);
                 });
             }
         },
         brewery: {
             method: 'GET',
-            path: '/brewery',
+            path: '/brewery/{id}',
             handler: function(req, reply) {
-                brewdb.breweries.getById("BSsTGw", {}, function(err, data) {
+                brewdb.breweries.getById(req.params.id, {withLocations: "Y"}, function(err, data) {
                     reply(data);
                 });
             }
         },
-        /*breweryBeers: {
+        beerList: {
             method: 'GET',
-            path: '/brewery-beers',
+            path: '/brewery/{id}/beers',
             handler: function(req, reply) {
-                brewdb.brewery.getById("BSsTGw", {}, function(err, data){
+                var url = 'http://api.brewerydb.com/v2/brewery/' + req.params.id + '/beers?key=6de3e767a19d0512bacc940476987bd9&format=json';
+                request(url, function(error, response, body) {
+                    reply(JSON.parse(body));
+                });
+            }
+        },
+        search: {
+            method: 'GET',
+            path: '/search',
+            handler: function(req, reply) {
+                brewdb.search.all( { q: "coors" }, function(err, data) {
                    reply(data); 
                 });
             }
-            
-        },*/
+        },
         spa: {
             method: 'GET',
             path: '/{path*}',
@@ -62,7 +72,7 @@ var Hapi = require('hapi'),
         }
     };
 
-server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.spa, routes.beer, routes.brewery ]);
+server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.spa, routes.beer, routes.brewery, routes.search, routes.beerList ]);
 server.start( onServerStarted );
 
 function onServerStarted() {

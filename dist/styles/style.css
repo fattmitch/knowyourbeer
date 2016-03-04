@@ -23,11 +23,17 @@ h1,
 h2,
 h3 {
     font-family: 'Montserrat', sans-serif;
+    margin: 0px;
 }
 
 a {
     text-decoration: underline;
     color: #8C5800;
+    font-weight: 400;
+}
+
+a:hover {
+    color: #db9826
 }
 
 body{
@@ -94,7 +100,7 @@ input[type="search"] {
 }
 
 .tagline {
-    margin-top: 40px;
+    margin-top: 50px;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -339,8 +345,8 @@ input[type="search"] {
 
 .beer-info {
     display: inline-block;
-    width: 72%;
-    margin-top: -14px
+    width: 60%;
+    margin-top: 0px
 }
 
 .beer-title {
@@ -351,7 +357,7 @@ input[type="search"] {
 .brewery {
     font-weight: 400;
     font-size: 13px;
-    margin-top: -10px;
+    margin-top: 5px;
     margin-bottom: 0px;
 }
 
@@ -377,7 +383,7 @@ input[type="search"] {
     
     .beer-title {
         font-size: 18px;
-        margin-top: 14px
+        margin-top: 0px
     }
     
     .brewery {
@@ -451,14 +457,19 @@ input[type="search"] {
 
 .location {
     font-weight: 400;
-    font-size: 13px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.website {
+    font-weight: 400;
+    font-size: 15px;
     margin-top: -10px;
-    margin-bottom: 0px;
 }
 
 @media (min-width: 992px) {
     .brewery-title {
-        font-size: 20px;
+        font-size: 25px;
     }
     
     .location {
@@ -505,6 +516,17 @@ input[type="search"] {
     }
 }
 
+/* ABOUT US PAGE */
+
+.about {
+    width: 90%;
+    margin: auto;
+}
+
+.about-header {
+    text-transform: uppercase;
+    font-size: 15px;
+}
 
 /* FOOTER MAIN */
 
@@ -558,21 +580,6 @@ footer p {
         top: 5px
     }
 }
-
-/* ABOUT US PAGE */
-
-.about {
-    width: 90%;
-    margin: auto;
-}
-
-.about-header {
-    text-transform: uppercase;
-    font-size: 15px;
-}
-
-
-
 
 /* FOOTER SECONDARY */
 

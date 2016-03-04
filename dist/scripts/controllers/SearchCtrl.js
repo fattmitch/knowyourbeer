@@ -1,9 +1,16 @@
 (function() {
-    function SearchCtrl() {
-        
+    function SearchCtrl($http, $scope) {
+        $http({
+            method: 'GET',
+            url: '/search'
+        }).then(function success(response) {
+            $scope.beerResults = response.data;
+        }, function error(response) {
+            console.log("Error");
+        });
     }
     
     angular
         .module('knowYourBeer')
-        .controller('SearchCtrl', SearchCtrl);
+        .controller('SearchCtrl', ['$http', '$scope', SearchCtrl]);
  })();

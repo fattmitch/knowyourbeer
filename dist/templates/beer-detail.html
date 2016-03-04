@@ -1,6 +1,6 @@
 <nav class="header"> <!--Logo and Tagline -->
         <a href="/" class="logo-secondary">
-            <img src="assets/images/footer-logo.png" alt="Know Your Beer Logo">
+            <img src="/assets/images/footer-logo.png" alt="Know Your Beer Logo">
         </a>
         <div class="search-box-secondary"> <!--Search Bar -->
             <div class="search-container-secondary">
@@ -17,7 +17,7 @@
             <div class="beer-info">
                 <h3 class="beer-title">{{ beerTitle }}</h3>
                 <h4 class="brewery"> 
-                    <a ui-sref="brewery-detail">{{ breweryTitle }}</a> | {{ breweryCity }}, {{ breweryState }} | {{ breweryCountry }}</h4>
+                    <a href="/brewery-detail/{{breweryId}}">{{ breweryTitle }}</a> | {{ breweryCity }}, {{ breweryState }} | {{ breweryCountry }}</h4>
                 <div class="attribute-value"><span class="attribute">Style:</span><span class="value">{{ beerStyle }}</span></div>
                 <div class="attribute-value"><span class="attribute">IBUs:</span><span class="value">{{ ibu }}</span></div>
                 <div class="attribute-value"><span class="attribute">ABV</span><span class="value">{{ abv }}%</span></div>
@@ -27,7 +27,7 @@
             </div>
             <div class="brewery-description">
                 <h3>
-                    <a ui-sref="brewery-detail">{{ breweryTitle }} </a>
+                    <a href="/brewery-detail/{{breweryId}}">{{ breweryTitle }} </a>
                 </h3>
                 <p>{{ breweryDescription }}</p>
             </div>
@@ -41,6 +41,6 @@
             <a href="/contact">Contact Us</a>
         </div>
         <a href="index.html" class="footer-secondary-logo">
-            <img src="assets/images/footer-logo.png" alt="Know Your Beer FooterImage">
+            <img src="/assets/images/footer-logo.png" alt="Know Your Beer FooterImage">
         </a>
     </footer>
