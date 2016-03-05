@@ -1,0 +1,9 @@
+<div class="search-result" ng-repeat="result in breweryResults">
+    <div class="beer-logo">
+        <img src="{{result.images.squareMedium}}" alt="{{ result.name}} logo">
+    </div>
+    <div class="beer-info">
+        <h3 class="beer-title">{{ result.name }}</h3>
+        <div>Type: {{result.type}}</div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="search-result" ng-repeat="result in beerResults">
+    <div class="beer-logo">
+        <img src="{{result.labels.icon}}" alt="{{ result.name }} logo">
+    </div>
+    <div class="beer-info">
+        <h3 class="beer-title"><a href="/beer-detail/{{result.id}}">{{ result.name }}</a></h3>
+        <h4 class="brewery">Russian River Brewery | Santa Rosa, California</h4>
+        <div class="attribute-value"><span class="attribute">Style:</span><span class="value">{{ result.style.shortName }}</span></div>
+        <div class="attribute-value"><span class="attribute">IBUs</span><span class="value">{{ result.ibu }}</span></div>
+        <div class="attribute-value"><span class="attribute">ABV</span><span class="value">{{ result.abv }}%</span></div>
+        <div>Type: {{result.type}}</div>
+    </div>
+</div>
