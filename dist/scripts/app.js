@@ -13,7 +13,7 @@
         })
         
             .state('search-results', {
-                url: '/search-results',
+                url: '/search-results/:query',
                 controller: 'SearchCtrl as search',
                 templateUrl: '/templates/search-results.html'
         })

@@ -54,16 +54,17 @@ var Hapi = require('hapi'),
                 });
             }
         },
-        searchBeers: {
+        search: {
             method: 'GET',
-            path: '/searchbeers',
+            path: '/search/{query}',
             handler: function(req, reply) {
-                brewdb.search.beers( { q: "coors" }, function(err, data) {
-                   reply(data); 
+                var url = 'http://api.brewerydb.com/v2/search?q=' + req.params.query + '&key=6de3e767a19d0512bacc940476987bd9&format=json&withBreweries=Y';
+                request(url, function(error, response, body) {
+                    reply(JSON.parse(body));
                 });
             }
         },
-        searchBreweries: {
+        /*searchBreweries: {
             method: 'GET',
             path: '/searchbreweries',
             handler: function(req, reply) {
@@ -71,7 +72,7 @@ var Hapi = require('hapi'),
                    reply(data); 
                 });
             }
-        },        
+        },*/   
         spa: {
             method: 'GET',
             path: '/{path*}',
@@ -81,7 +82,7 @@ var Hapi = require('hapi'),
         }
     };
 
-server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.spa, routes.beer, routes.brewery, routes.searchBeers, routes.searchBreweries, routes.beerList ]);
+server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.spa, routes.beer, routes.brewery, routes.search, routes.beerList ]);
 server.start( onServerStarted );
 
 function onServerStarted() {

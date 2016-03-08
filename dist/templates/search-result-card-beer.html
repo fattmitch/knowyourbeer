@@ -1,13 +1,23 @@
-<div class="search-result" ng-repeat="result in beerResults">
+<div class="search-result" ng-if="result.type == 'beer'" ng-repeat="result in beerResults">
     <div class="beer-logo">
-        <img src="{{result.labels.icon}}" alt="{{ result.name }} logo">
+        <img src="{{result.labels.medium}}" alt="{{ result.name }} logo">
     </div>
     <div class="beer-info">
         <h3 class="beer-title"><a href="/beer-detail/{{result.id}}">{{ result.name }}</a></h3>
-        <h4 class="brewery">Russian River Brewery | Santa Rosa, California</h4>
+        <h4 class="brewery">{{ result.breweries[0].name }} | {{ result.breweries[0].locations[0].locality }}, {{ result.breweries[0].locations[0].region }}</h4>
         <div class="attribute-value"><span class="attribute">Style:</span><span class="value">{{ result.style.shortName }}</span></div>
         <div class="attribute-value"><span class="attribute">IBUs</span><span class="value">{{ result.ibu }}</span></div>
         <div class="attribute-value"><span class="attribute">ABV</span><span class="value">{{ result.abv }}%</span></div>
-        <div>Type: {{result.type}}</div>
+    </div>
+</div>
+
+<h2>Breweries</h2>
+
+<div class="search-result" ng-if="result.type == 'brewery'" ng-repeat="result in beerResults">
+    <div class="beer-logo">
+        <img src="{{result.images.squareMedium}}" alt="{{ result.name}} logo">
+    </div>
+    <div class="beer-info">
+        <h3 class="beer-title"><a href="/brewery-detail/{{result.id}}">{{ result.name }}</a></h3>
     </div>
 </div>

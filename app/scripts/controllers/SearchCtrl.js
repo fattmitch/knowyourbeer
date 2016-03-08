@@ -1,25 +1,19 @@
 (function() {
-    function SearchCtrl($http, $scope) {
+    function SearchCtrl($http, $scope, $stateParams) {
+        var searchQuery = $stateParams.query;
+               
         $http({
             method: 'GET',
-            url: '/searchbeers'
+            url: '/search/' + searchQuery
         }).then(function success(response) {
-            $scope.beerResults = response.data;
-        }, function error(response) {
-            console.log("Error");
-        });
-        
-        $http({
-            method: 'GET',
-            url: '/searchbreweries'
-        }).then(function success(response) {
-            $scope.breweryResults = response.data;
+            $scope.beerResults = response.data.data;
         }, function error(response) {
             console.log("Error");
         });
     }
+        
     
     angular
         .module('knowYourBeer')
-        .controller('SearchCtrl', ['$http', '$scope', SearchCtrl]);
+        .controller('SearchCtrl', ['$http', '$scope', '$stateParams', SearchCtrl]);
  })();

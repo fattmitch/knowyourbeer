@@ -1,21 +1,16 @@
 <nav class="header"> <!--Logo and Tagline -->
     <a href="/" class="logo-secondary">
-        <img src="assets/images/footer-logo.png" alt="Know Your Beer Logo">
+        <img src="/assets/images/footer-logo.png" alt="Know Your Beer Logo">
     </a>
     <div class="search-box-secondary"> <!--Search Bar -->
         <div class="search-container-secondary">
-            <input type="search" id="search" placeholder="Search beer or brewery" />
-            <button class="icon"><i class="fa fa-search"></i></button>
+            <ng-include src="'/templates/search-bar.html'"></ng-include>
         </div>
     </div>
 </nav>
 <section class="main">
     <div class="main-container">
-        
         <ng-include src="'/templates/search-result-card-beer.html'"></ng-include>
-        <h2>Breweries</h2>
-        <ng-include src="'/templates/search-result-card-brewery.html'"></ng-include>
-        
     </div>
 </section>
 <footer class="footer-secondary">
@@ -26,6 +21,6 @@
         <a href="/contact">Contact Us</a>
     </div>
     <a href="index.html" class="footer-secondary-logo">
-        <img src="assets/images/footer-logo.png" alt="Know Your Beer FooterImage">
+        <img src="/assets/images/footer-logo.png" alt="Know Your Beer FooterImage">
     </a>
 </footer>
