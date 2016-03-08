@@ -127,7 +127,7 @@ input[type="search"] {
 .logo-secondary {
     display: block;
     position: relative;
-    top: 10px;
+    top: 15px;
     text-align: center;
     
 }
@@ -252,7 +252,7 @@ input[type="search"] {
 /* SEARCH SECONDARY - search bar in nav */
 
 .search-box-secondary {
-    margin: 20px auto;
+    margin: 25px auto;
     width: 90%;
     max-width: 700px;
     overflow: hidden;
@@ -540,6 +540,19 @@ footer{
     padding: 0 20px 5px 20px;   
 }
 
+footer p {
+    display: none;
+    width: 49%;
+}
+
+.footer-links {
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    width: 49%;
+    text-align: left;
+}
+
 .footer-links a {
     color: white;
     text-decoration: none;
@@ -547,37 +560,33 @@ footer{
 }
 
 .footer-logo {
-    display: none;
-    width: 33%;
-    text-align: right;
-}
-
-footer p {
     display: inline-block;
     width: 49%;
+    text-align: right;
 }
 
-.footer-links {
-    display: inline-block;
-    width: 50%;
-    text-align: right;
+.footer-logo img {
+    max-height: 35px;
 }
 
 @media (min-width: 768px) {
     
     footer p {
+        display: inline-block;
         width: 33%;
     }
     
     .footer-links {
         width: 33%;
         text-align: center;
+        bottom: 0px
     }
     
     .footer-logo {
         display: inline-block;
         position: relative;
-        top: 5px
+        top: 5px;
+        width: 33%
     }
 }
 
@@ -597,6 +606,14 @@ footer p {
     background-size: auto;
 }
 
+.footer-secondary-links {
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    width: 50%;
+    text-align: left;
+}
+
 .footer-secondary-links a {
     color: white;
     text-decoration: none;
@@ -605,20 +622,17 @@ footer p {
 
 .footer-secondary-logo {
     position: relative;
-    top: 5px;
-    display: none;
+    display: inline-block;
     text-align: right;
+    width: 49%;
+}
+
+.footer-secondary-logo img {
+    max-height: 35px;
 }
     
 .footer-secondary p {
-    display: inline-block;
-    width: 49%;
-}
-    
-.footer-secondary-links {
-    display: inline-block;
-    width: 50%;
-    text-align: right;
+    display: none;    
 }
 
 @media (min-width: 768px) {
@@ -628,15 +642,21 @@ footer p {
     }
     .footer-secondary-logo {
         display: inline-block;
-        width: 33%
+        width: 33%;
+        top: 5px;
+        
     }
     
     .footer-secondary p {
+        display: inline-block;
+        position: relative;
+        bottom: 5px;
         width: 33%;
     }
     
     .footer-secondary-links {
         width: 33%;
         text-align: center;
+        bottom: 5px;
     }
 }
