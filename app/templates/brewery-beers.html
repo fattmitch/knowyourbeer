@@ -1,13 +1,14 @@
 <div class="brewery-beers" ng-repeat="beer in beerList">
     <div class="beer-card">
-        <div class="beer-logo">
-            <img src={{beer.labels.icon}} alt="{{beer.name}} logo">
+        <div class="beer-logo-brewery">
+            <img ng-show="beer.labels.icon" src={{beer.labels.icon}} alt="{{beer.name}} logo">
+            <img ng-hide="beer.labels.icon" src="/assets/images/placeholder-image.png" alt="placeholder image">
         </div>
         <div class="beer-info">
-            <h3 class="beer-title"><a href='/beer-detail/{{beer.id}}'>{{ beer.name }}</a></h3>
-            <div class="attribute-value"><span class="attribute">Style:</span><span class="value">{{ beer.style.shortName }}</span></div>
-            <div class="attribute-value"><span class="attribute">IBUs:</span><span class="value">{{ beer.ibu }}</span></div>
-            <div class="attribute-value"><span class="attribute">ABV</span><span class="value">{{ beer.abv }}%</span></div>
+            <h3 class="beer-title"><a ui-sref="beer-detail({ id: beer.id})">{{ beer.name }}</a></h3>
+            <div ng-if="beer.style.shortName" class="attribute-value"><span class="attribute">Style:</span><span class="value">{{ beer.style.shortName }}</span></div>
+            <div ng-if="beer.ibu" class="attribute-value"><span class="attribute">IBUs:</span><span class="value">{{ beer.ibu }}</span></div>
+            <div ng-if="beer.abv" class="attribute-value"><span class="attribute">ABV</span><span class="value">{{ beer.abv }}%</span></div>
         </div>
     </div>
 </div>

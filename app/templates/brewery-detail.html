@@ -1,5 +1,5 @@
     <nav class="header"> <!--Logo and Tagline -->
-        <a href="/" class="logo-secondary">
+        <a ui-sref="landing" class="logo-secondary">
             <img src="/assets/images/footer-logo.png" alt="Know Your Beer Logo">
         </a>
         <div class="search-box-secondary">
@@ -8,18 +8,22 @@
             </div>
         </div>
     </nav>
+
+    <div class="loader" ng-if="loading"></div>
+    <div ng-if="breweryLoaded">
     <section class="main">
         <div class="main-column brewery">
             <div class="brewery-logo">
-                <img src={{brewery.images.squareMedium}} alt="{{brewery.name}} logo">
+                <img ng-show="brewery.images.squareMedium" src={{brewery.images.squareMedium}} alt="{{brewery.name}} logo">
+                <img ng-hide="brewery.images.squareMedium" src="/assets/images/placeholder-image.png" alt="Placeholder image">
             </div>
             <div class="brewery-info">
-                
+
                 <h3 class="brewery-title">{{ brewery.name }}</h3>
-                <h4 class="location">{{ breweryCity }}, {{ breweryState}} | {{ breweryCountry }}</h4>
+                <h4 class="location">{{ breweryCity }}<span ng-if="breweryState">, {{ breweryState}} </span>| {{ breweryCountry }}</h4>
                 <h4 class="website"><a href="{{brewery.website}}">{{ brewery.website }}</a></h4>
-                
-                </div>
+
+            </div>
             <div>
                 <p>{{ brewery.description }}</p>
             </div>
@@ -32,14 +36,15 @@
         <ng-include src="'/templates/brewery-beers.html'"></ng-include>
         
     </section>
+    </div>
     <footer class="footer-secondary">
         <p>Copyright Matt Fitch 2016</p> 
         <div class="footer-secondary-links">
-            <a href="/about">About Us</a>
+            <a ui-sref="about-us">About Us</a>
             |
             <a href="/contact">Contact Us</a>
         </div>
         <a ui-sref="landing" class="footer-secondary-logo">
-            <img src="assets/images/brewery-db.png" alt="breweryDB logo">
+            <img src="/assets/images/brewery-db.png" alt="breweryDB logo">
         </a>
     </footer>

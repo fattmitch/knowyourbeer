@@ -1,5 +1,5 @@
 <nav class="header"> <!--Logo and Tagline -->
-    <a href="/" class="logo-secondary">
+    <a ui-sref="landing" class="logo-secondary">
         <img src="/assets/images/footer-logo.png" alt="Know Your Beer Logo">
     </a>
     <div class="search-box-secondary"> <!--Search Bar -->
@@ -10,13 +10,14 @@
 </nav>
 <section class="main">
     <div class="main-container">
+        
         <ng-include src="'/templates/search-result-card-beer.html'"></ng-include>
     </div>
 </section>
 <footer class="footer-secondary">
     <p>Copyright Matt Fitch 2016</p> 
     <div class="footer-secondary-links">
-        <a href="/about">About Us</a>
+        <a ui-sref="about-us">About Us</a>
         |
         <a href="/contact">Contact Us</a>
     </div>

@@ -3,6 +3,8 @@
         var breweryId = $stateParams.id;
         var beerId;
         
+        $scope.loading = true;
+        
         function callBeer(beerId) {
             $http({
                 method: 'GET',
@@ -11,6 +13,11 @@
                 $scope.breweryCity = response.data.breweries[0].locations[0].locality;
                 $scope.breweryState = response.data.breweries[0].locations[0].region;
                 $scope.breweryCountry = response.data.breweries[0].locations[0].country.displayName;
+                
+                $scope.breweryLoaded = true;
+                                
+                $scope.loading = false;
+                
             }, function error(response) {
                 console.log('beer location error');
             });

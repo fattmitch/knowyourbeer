@@ -1,5 +1,5 @@
 <nav class="header"> <!--Logo and Tagline -->
-        <a href="/" class="logo-secondary">
+        <a ui-sref="landing" class="logo-secondary">
             <img src="/assets/images/footer-logo.png" alt="Know Your Beer Logo">
         </a>
         <div class="search-box-secondary"> <!--Search Bar -->
@@ -10,36 +10,41 @@
     </nav>
     <section class="main">
         <div class="main-column">
-            <div class="beer-logo">
-                <img src={{beerLogoIcon}} alt="{{ beerTitle }} logo">
-            </div>
-            <div class="beer-info">
-                <h3 class="beer-title">{{ beerTitle }}</h3>
-                <h4 class="brewery"> 
-                    <a href="/brewery-detail/{{breweryId}}">{{ breweryTitle }}</a> | {{ breweryCity }}, {{ breweryState }} | {{ breweryCountry }}</h4>
-                <div class="attribute-value"><span class="attribute">Style:</span><span class="value">{{ beerStyle }}</span></div>
-                <div class="attribute-value"><span class="attribute">IBUs:</span><span class="value">{{ ibu }}</span></div>
-                <div class="attribute-value"><span class="attribute">ABV</span><span class="value">{{ abv }}%</span></div>
-            </div>
-            <div class="beer-description">
-                <p>{{ beerDescription }}</p>
-            </div>
-            <div class="brewery-description">
-                <h3>
-                    <a href="/brewery-detail/{{breweryId}}">{{ breweryTitle }} </a>
-                </h3>
-                <p>{{ breweryDescription }}</p>
+            <div class="loader" ng-if="loading">Loading...</div>
+            <div ng-if="beer">
+                <div class="beer-logo">
+                    <img ng-show="beer.labels.medium" src="{{beer.labels.medium}}" alt="{{ beer.name }} logo">
+                    <img ng-hide="beer.labels.medium" src="/assets/images/placeholder-image.png" alt="Place holder Image">
+                </div>
+                <div class="beer-info">
+                    <h3 class="beer-title">{{ beer.name }}</h3>
+                    <h4 ng-if="breweryTitle" class="brewery"> 
+                        <a ui-sref="brewery-detail({ id: breweryId})">{{ breweryTitle }}</a> | {{ breweryCity }}<span ng-if="breweryState">, {{ breweryState }}</span> | {{ breweryCountry }}
+                    </h4>
+                    <div ng-if="beer.style" class="attribute-value"><span class="attribute">Style:</span><span class="value">{{ beer.style.name }}</span></div>
+                    <div ng-if="beer.ibu" class="attribute-value"><span class="attribute">IBUs:</span><span class="value">{{ beer.ibu }}</span></div>
+                    <div ng-if="beer.abv" class="attribute-value"><span class="attribute">ABV:</span><span class="value">{{ beer.abv }}%</span></div>
+                </div>
+                <div class="beer-description">
+                    <p>{{ beer.description }}</p>
+                </div>
+                <div class="brewery-description">
+                    <h3>
+                        <a ui-sref="brewery-detail({ id: breweryId})">{{ breweryTitle }}</a>
+                    </h3>
+                    <p>{{ breweryDescription }}</p>
+                </div>
             </div>
         </div>
     </section>
     <footer class="footer-secondary">
         <p>Copyright Matt Fitch 2016</p> 
         <div class="footer-secondary-links">
-            <a href="/about">About Us</a>
+            <a ui-sref="about-us">About Us</a>
             |
             <a href="/contact">Contact Us</a>
         </div>
         <a ui-sref="landing" class="footer-secondary-logo">
-            <img src="assets/images/brewery-db.png" alt="breweryDB logo">
+            <img src="/assets/images/brewery-db.png" alt="breweryDB logo">
         </a>
     </footer>
