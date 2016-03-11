@@ -3,6 +3,8 @@
         var breweryId = $stateParams.id;
         var beerId;
         
+        //breweryDbConnection.getBeer(id)
+        
         $scope.loading = true;
         
         function callBeer(beerId) {
