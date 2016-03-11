@@ -1,0 +1,30 @@
+
+    <nav class="header"> <!--Logo and Tagline -->
+        <a ui-sref="landing" class="logo-secondary">
+            <img src="assets/images/footer-logo.png" alt="Know Your Beer Logo">
+        </a>
+        <div class="search-box-secondary"> <!--Search Bar -->
+            <div class="search-container-secondary">
+                <ng-include src="'/templates/search-bar.html'"></ng-include>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="main">
+        <div class="main-column">
+            <h2 class='about-header'>Contact Us</h2>
+            <p>Want to drop us a line? Send a note to <span class='big'><a href="mailto:info@knowyourbeer.com">&#105;&#110;&#102;&#111;&#64;&#107;&#110;&#111;&#119;&#121;&#111;&#117;&#114;&#98;&#101;&#101;&#114;&#46;&#99;&#111;&#109;.</a></span>and we'll respond at some point!</p>
+        </div>
+    </section>
+    
+    <footer class="footer-secondary">
+        <p>Copyright Matt Fitch 2016</p> 
+        <div class="footer-secondary-links">
+            <a ui-sref="about-us">About Us</a>
+            |
+            <a ui-sref="contact-us">Contact Us</a>
+        </div>
+        <a ui-sref="landing" class="footer-secondary-logo">
+            <img src="assets/images/brewery-db.png" alt="breweryDB logo">
+        </a>
+</footer>

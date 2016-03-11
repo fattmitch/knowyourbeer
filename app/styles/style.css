@@ -27,9 +27,13 @@ h3 {
 }
 
 a {
-    text-decoration: underline;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
     color: #8C5800;
     font-weight: 400;
+    text-decoration: underline;
 }
 
 a:hover {
@@ -78,7 +82,6 @@ input[type="search"] {
     text-align: center;
 }
 
-
 .loader:before,
 .loader:after,
 .loader {
@@ -118,6 +121,30 @@ input[type="search"] {
     content: '';
     position: absolute;
     top: 0;
+}
+
+select {
+    width: 100%;
+    border: none;
+    background: rgba(255, 255, 255, 0.78);
+    font-size: 16px;
+    border-radius: 0px;
+    margin-bottom: 15px;
+}
+
+.big a {
+    font-weight: 700;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    color: #8C5800;
+    text-decoration: none;
+    
+}
+
+.big a:hover {
+    color: #db9826
 }
 
 @-webkit-keyframes load7 {

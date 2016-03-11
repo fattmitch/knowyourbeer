@@ -1,8 +1,41 @@
 <p class="no-results" ng-if="noResults">Sorry, no results to see here :( <br><br> <a ui-sref="landing">Search Again!</a></p>
+
 <div class="loader" ng-if="loading">Loading...</div>
+
 <div ng-if="beerResults">
-    <div class="search-result" ng-repeat="result in beerResults">
-        <div ng-if="result.type == 'beer'">
+    <select ng-init="filterOn = 'display-all'" ng-model="filterOn">
+        <option value="display-all">Filter by Beer or Brewery</option>
+        <option value="display-beer">Beer</option>
+        <option value="display-brewery">Brewery</option>
+    </select>
+        
+        <div ng-repeat="result in beerResults" ng-if="filterOn == 'display-all'">
+            <div class="search-result" ng-if="result.type == 'beer'">
+                <div class="beer-logo">
+                    <img ng-show="result.labels.medium" src="{{result.labels.medium}}" alt="{{ result.name }} logo">
+                    <img ng-hide="result.labels.medium" src="/assets/images/placeholder-image.png" alt="Place holder image">
+                </div>
+                <div class="beer-info">
+                    <h3 class="beer-title"><a ui-sref="beer-detail({ id: result.id})">{{ result.name }}</a></h3>
+                    <h4 ng-if="result.breweries[0].name" class="brewery">{{ result.breweries[0].name }} | {{ result.breweries[0].locations[0].locality }}, {{ result.breweries[0].locations[0].region }}</h4>
+                    <div ng-if="result.style.shortName" class="attribute-value"><span class="attribute">Style:</span><span class="value">{{ result.style.shortName }}</span></div>
+                    <div ng-if="result.ibu" class="attribute-value"><span class="attribute">IBUs:</span><span class="value">{{ result.ibu }}</span></div>
+                    <div ng-if="result.abv" class="attribute-value"><span class="attribute">ABV:</span><span class="value">{{ result.abv }}%</span></div>
+                </div>
+            </div>
+            <div class="search-result" ng-if="result.type == 'brewery'">
+                <div class="beer-logo">
+                    <img ng-show="result.images.squareMedium" src="{{result.images.squareMedium}}" alt="{{ result.name }} logo">
+                    <img ng-hide="result.images.squareMedium" src="/assets/images/brewery-placeholder.png" alt="Place holder image">
+                </div>
+                <div class="beer-info">
+                    <h3 class="beer-title"><a ui-sref="brewery-detail({ id: result.id})">{{ result.name }}</a></h3>
+                </div>
+            </div>
+        </div>
+
+    <div ng-if="filterOn == 'display-beer'" ng-repeat="result in beerResults | filter: result.type = 'beer' : true">
+        <div class="search-result" ng-if="result.type == 'beer'">
             <div class="beer-logo">
                 <img ng-show="result.labels.medium" src="{{result.labels.medium}}" alt="{{ result.name }} logo">
                 <img ng-hide="result.labels.medium" src="/assets/images/placeholder-image.png" alt="Place holder image">
@@ -15,14 +48,17 @@
                 <div ng-if="result.abv" class="attribute-value"><span class="attribute">ABV:</span><span class="value">{{ result.abv }}%</span></div>
             </div>
         </div>
+    </div>
+    
+    <div ng-if="filterOn == 'display-brewery'" ng-repeat="result in beerResults | filter: result.type = 'brewery' : true">
         <div class="search-result" ng-if="result.type == 'brewery'">
-            <div class="beer-logo">
-                <img ng-show="result.images.squareMedium" src="{{result.images.squareMedium}}" alt="{{ result.name }} logo">
-                <img ng-hide="result.images.squareMedium" src="/assets/images/brewery-placeholder.png" alt="Place holder image">
+                <div class="beer-logo">
+                    <img ng-show="result.images.squareMedium" src="{{result.images.squareMedium}}" alt="{{ result.name }} logo">
+                    <img ng-hide="result.images.squareMedium" src="/assets/images/brewery-placeholder.png" alt="Place holder image">
+                </div>
+                <div class="beer-info">
+                    <h3 class="beer-title"><a ui-sref="brewery-detail({ id: result.id})">{{ result.name }}</a></h3>
+                </div>
             </div>
-            <div class="beer-info">
-                <h3 class="beer-title"><a ui-sref="brewery-detail({ id: result.id})">{{ result.name }}</a></h3>
-            </div>
-        </div>
     </div>
 </div>
