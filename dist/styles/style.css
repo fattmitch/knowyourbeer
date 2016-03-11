@@ -73,7 +73,7 @@ input[type="search"] {
 
 .main-column {
     width: 95%;
-    padding-top: 30px;
+    padding-top: 15px;
     margin: auto;
     
 }
@@ -145,6 +145,14 @@ select {
 
 .big a:hover {
     color: #db9826
+}
+
+.back {
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    color: #db9826;
+    cursor: pointer;
 }
 
 @-webkit-keyframes load7 {
@@ -253,7 +261,6 @@ select {
     font-family: 'Montserrat-Regular', sans-serif;
     font-size: 16px;
     color: rgba(51, 51, 51, 0.57);
-    text-transform: uppercase;
     float: left;
     padding-left: 15px;
 }
@@ -370,8 +377,7 @@ select {
     border-radius: 4px;
     font-family: 'Montserrat-Regular', sans-serif;
     font-size: 16px;
-    color: rgba(51, 51, 51, 0.57);
-    text-transform: uppercase;
+    color: rgba(51, 51, 51, 0.86);
     float: left;
     padding-left: 15px;
 }
@@ -403,7 +409,7 @@ select {
 .search-container-secondary input#search:hover {
     outline: none;
     box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.47);
-    box-shadow: inset 0px 1px know2px 0px rgba(0,0,0,0.47);
+    box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.47);
     background: #fff;
     color: #333;
 }
@@ -630,16 +636,13 @@ select {
     }
 }
 
-/* ABOUT US PAGE */
+/* ABOUT US PAGE & CONTACT US PAGE */
 
-.about {
-    width: 90%;
-    margin: auto;
-}
 
 .about-header {
     text-transform: uppercase;
     font-size: 15px;
+    margin-top: 15px;
 }
 
 /* FOOTER MAIN */

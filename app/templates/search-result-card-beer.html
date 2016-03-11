@@ -4,9 +4,9 @@
 
 <div ng-if="beerResults">
     <select ng-init="filterOn = 'display-all'" ng-model="filterOn">
-        <option value="display-all">Filter by Beer or Brewery</option>
-        <option value="display-beer">Beer</option>
-        <option value="display-brewery">Brewery</option>
+        <option value="display-all">View All</option>
+        <option value="display-beer">View Beers</option>
+        <option value="display-brewery">View Breweries</option>
     </select>
         
         <div ng-repeat="result in beerResults" ng-if="filterOn == 'display-all'">

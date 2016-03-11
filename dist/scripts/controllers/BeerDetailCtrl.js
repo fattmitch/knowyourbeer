@@ -4,6 +4,10 @@
         
         $scope.loading = true;
         
+        $scope.back = function() {
+            window.history.back();
+        };
+        
         $http({
             method: 'GET',
             url: '/beer/' + beerId

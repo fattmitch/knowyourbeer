@@ -12,6 +12,7 @@
         <div class="main-column">
             <div class="loader" ng-if="loading">Loading...</div>
             <div ng-if="beer">
+                <div class="back" ng-click="back()">Take me back...</div>
                 <div class="beer-logo">
                     <img ng-show="beer.labels.medium" src="{{beer.labels.medium}}" alt="{{ beer.name }} logo">
                     <img ng-hide="beer.labels.medium" src="/assets/images/placeholder-image.png" alt="Place holder Image">
@@ -19,7 +20,7 @@
                 <div class="beer-info">
                     <h3 class="beer-title">{{ beer.name }}</h3>
                     <h4 ng-if="breweryTitle" class="brewery"> 
-                        <a ui-sref="brewery-detail({ id: breweryId})">{{ breweryTitle }}</a> | {{ breweryCity }}<span ng-if="breweryState">, {{ breweryState }}</span> | {{ breweryCountry }}
+                        <a ui-sref="brewery-detail({ id: breweryId})">{{ breweryTitle }}</a> | <span ng-if="breweryCity">{{ breweryCity }},</span><span ng-if="breweryState"> {{ breweryState }}</span> | {{ breweryCountry }}
                     </h4>
                     <div ng-if="beer.style" class="attribute-value"><span class="attribute">Style:</span><span class="value">{{ beer.style.name }}</span></div>
                     <div ng-if="beer.ibu" class="attribute-value"><span class="attribute">IBUs:</span><span class="value">{{ beer.ibu }}</span></div>
