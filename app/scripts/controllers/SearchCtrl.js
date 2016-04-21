@@ -1,9 +1,10 @@
 (function() {
     function SearchCtrl($http, $scope, $stateParams) {
-        var searchQuery = $stateParams.query;
         
-        $scope.loading = true;
+        var searchQuery = $stateParams.query;
                
+        $scope.loading = true;
+                      
         $http({
             method: 'GET',
             url: '/search/' + searchQuery
